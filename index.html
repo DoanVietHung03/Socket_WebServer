@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Login Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!-- <link rel="stylesheet" href="index.css"/> -->
+        <style>
+            * {box-sizing: border-box;}
+
+            body
+            {
+            margin: 0 ;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .open-button 
+            {
+            background-color: #04AA6D;
+            font-size: 20px;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            bottom: 23px;
+            right: 28px;
+            width: 280px;
+            }
+            
+            .form-popup 
+            {
+            display: block;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            bottom: 0;
+            right: 15px;
+            border: 3px solid #f1f1f1;
+            z-index: 9;
+            margin: 5% 35%;
+            height: 430px;
+            width: 430px;
+            }
+
+            .form-container 
+            {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+            position: absolute;
+            left: 70px;
+            }
+
+            .form-container input[type=text], .form-container input[type=password] 
+            {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            }
+
+            .form-container input[type=text]:focus, .form-container input[type=password]:focus 
+            {
+            background-color: #ddd;
+            outline: none;
+            }
+
+            .form-container .btn 
+            {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom:10px;
+            opacity: 0.8;
+            }
+
+            .form-container .cancel 
+            {
+            background-color: red;
+            }
+
+            .form-container .btn:hover, .open-button:hover 
+            {
+            opacity: 1;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <h1>FIT.HCMUS Login</h1>
+            <button class="open-button" onclick="openForm()">Login</button>
+            <div class="form-popup" id="myForm">
+                <div class="form-container">
+                    <form action="http://127.0.0.1:8080" method="post">
+                        <h1>Login</h1>
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="Username" required>
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="Password" required>
+                        <button type="submit" class="btn">Login</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                    </form>
+                </div>
+            </div>
+
+            <script>
+            function openForm() {
+            document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+            }
+            </script>
+        </main>
+    </body>
+</html>
